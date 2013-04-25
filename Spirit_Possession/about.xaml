@@ -1,0 +1,47 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Spirit_Possession.about"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" >
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/background.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Foreground="White" Text="{Binding Resources.AppTitle, Source={StaticResource StringResource}}" />
+          
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+
+            <HyperlinkButton  Foreground="White" Content="{Binding Resources.Email, Source={StaticResource StringResource}}" Height="Auto" HorizontalAlignment="Left" Margin="0,121,0,0" Name="hyperlinkButton1" VerticalAlignment="Top" Width="Auto" FontSize="20" Click="hyperlinkButton1_Click" />
+            <TextBlock  Foreground="White" Height="Auto" HorizontalAlignment="Left" Margin="25,163,0,0" Name="randr" Text="{Binding Resources.Review, Source={StaticResource StringResource}}" VerticalAlignment="Top" Tap="textBlock1_Tap" FontSize="40" />
+            <TextBlock  Foreground="White" Height="30" HorizontalAlignment="Left" Margin="28,208,0,0" Name="textBlock1" Text="{Binding Resources.ReviewSmall, Source={StaticResource StringResource}}" VerticalAlignment="Top" />
+            <TextBlock  Foreground="White" Height="Auto" HorizontalAlignment="Left" Margin="25,260,0,0" Name="textBlock2" Text="{Binding Resources.OtherApps, Source={StaticResource StringResource}}" VerticalAlignment="Top"  FontSize="40" Tap="textBlock2_Tap" />
+            <TextBlock  Foreground="White" Height="30" HorizontalAlignment="Left" Margin="28,313,0,0" Name="textBlock3" Text="{Binding Resources.OtherAppsSmall, Source={StaticResource StringResource}}" VerticalAlignment="Top" />
+            <TextBlock  Foreground="White" HorizontalAlignment="Left" Margin="10,576,0,0" TextWrapping="Wrap" Text="{Binding Resources.FooterTxt, Source={StaticResource StringResource}}" VerticalAlignment="Top" Width="418" Height="98"/>
+            <TextBlock  Foreground="White" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="{Binding Resources.Authors, Source={StaticResource StringResource}}" VerticalAlignment="Top"/>
+            <TextBlock  Foreground="White" HorizontalAlignment="Left" Margin="10,33,0,0" TextWrapping="Wrap" Text="{Binding Resources.Prog, Source={StaticResource StringResource}}" VerticalAlignment="Top"/>
+            <TextBlock  Foreground="White" HorizontalAlignment="Left" Margin="10,60,0,0" TextWrapping="Wrap" Text="{Binding Resources.Design, Source={StaticResource StringResource}}" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
